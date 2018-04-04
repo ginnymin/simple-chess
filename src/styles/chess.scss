@@ -1,0 +1,74 @@
+@keyframes errorblink {
+    to { color: red; }
+}
+
+@keyframes successblink {
+    to { color: green; }
+}
+
+.chess-board {
+    margin: 0 auto;
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    .piece {
+        position: absolute;
+        width: 75px;
+        height: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        .icon {
+            font-size: 50px;
+            color: #555;
+            &:hover, &:active {
+                color: #000;
+            }
+            &.error {
+                animation: errorblink 0.3s steps(2, start) 3;
+            }
+            &.success {
+                animation: successblink 0.3s steps(2, start) 3;
+            }
+        }
+    }
+}
+
+.chess-square {
+    width: 75px;
+    height: 75px;
+
+    &:nth-child(-2n+8),
+    &:nth-child(8) ~ &:nth-child(-2n+15),
+    &:nth-child(16) ~ &:nth-child(-2n+24),
+    &:nth-child(24) ~ &:nth-child(-2n+31),
+    &:nth-child(32) ~ &:nth-child(-2n+40),
+    &:nth-child(40) ~ &:nth-child(-2n+47),
+    &:nth-child(48) ~ &:nth-child(-2n+56),
+    &:nth-child(56) ~ &:nth-child(-2n+63) {
+        background-color: #eee;
+    }
+
+    &:nth-child(-2n+7),
+    &:nth-child(8) ~ &:nth-child(-2n+16),
+    &:nth-child(15) ~ &:nth-child(-2n+23),
+    &:nth-child(24) ~ &:nth-child(-2n+32),
+    &:nth-child(32) ~ &:nth-child(-2n+39),
+    &:nth-child(40) ~ &:nth-child(-2n+48),
+    &:nth-child(48) ~ &:nth-child(-2n+55),
+    &:nth-child(56) ~ &:nth-child(-2n+64) {
+        background-color: #ddd;
+    }
+}
+
+/* Resets */
+body,p,ul,li,h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+}
+ul,li {
+    list-style: none;
+}
