@@ -14,3 +14,4 @@ Simple chess (bishop and knight) example
 ### Viewing ###
 
 * After building, open build/index.html in a browser.
+* Or you can view it here: http://test.ginnymin.net/chess/
